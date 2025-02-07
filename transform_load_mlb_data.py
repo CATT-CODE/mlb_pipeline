@@ -184,13 +184,11 @@ def bulk_insert_stats(conn, table, columns, data):
 
 # The main transform and load function
 
-def transform_and_load(file_path):
+def transform_and_load(conn, file_path):
     # Load the raw JSON
     with open(file_path, "r") as f:
         data = json.load(f)
     
-    conn = create_connection(DATABASE_FILE)
-
     try:
         with conn:
             # Process teams
@@ -325,8 +323,6 @@ def transform_and_load(file_path):
     except Exception as e:
         logging.error(f"Error during transform and load: {e}")
         raise
-    finally:
-        conn.close()
 
 # Duplicate checking based on overlapping date ranges
 
@@ -392,7 +388,7 @@ def main():
             file_path = os.path.join(RAW_DIR, filename)
             logging.info(f"Processing file {file_path}")
             try:
-                transform_and_load(file_path)
+                transform_and_load(conn, file_path)
                 if start_date and end_date:
                     record_file_processed(conn, filename, start_date, end_date)
                 new_path = os.path.join(HISTORICAL_DIR, filename)
