@@ -162,6 +162,34 @@ This project showcases an end-to-end ETL pipeline for MLB stats with a focus on:
 
 ---
 
+## 2024 MLB Season Query Results
+
+### Top 10 Player Home Run Combinations (including all players):
+- Aaron Judge / Anthony Santander - 16 times
+- Aaron Judge / Giancarlo Stanton - 16 times
+- Aaron Judge / Juan Soto - 15 times
+- Aaron Judge / José Ramírez - 14 times
+- Aaron Judge / Shohei Ohtani - 14 times
+- José Ramírez / Shohei Ohtani - 14 times
+- Marcell Ozuna / Aaron Judge - 14 times
+- Marcell Ozuna / Anthony Santander - 14 times
+- Shohei Ohtani / Pete Alonso - 14 times
+- Brent Rooker / Aaron Judge - 13 times
+
+### Top 10 Player Home Run Combinations (excluding Aaron Judge):
+- José Ramírez / Shohei Ohtani - 14 times
+- Marcell Ozuna / Anthony Santander - 14 times
+- Shohei Ohtani / Pete Alonso - 14 times
+- Brent Rooker / Shohei Ohtani - 13 times
+- Juan Soto / Gunnar Henderson - 13 times
+- Marcell Ozuna / Juan Soto - 13 times
+- Shohei Ohtani / Francisco Lindor - 13 times
+- Teoscar Hernández / Shohei Ohtani - 13 times
+- Alex Bregman / Shohei Ohtani - 12 times
+- Jake Burger / Shohei Ohtani - 12 times
+
+---
+
 ## Quick Commands Summary
 
 | **Action** | **Command** |
