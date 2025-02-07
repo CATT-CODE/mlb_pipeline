@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is my MLB data pipeline project. It pulls MLB stats (batters, pitchers, and game data), processes and structures the data, and runs analytical queries on it. The pipeline is designed to be efficient, prevent duplicate processing, and allow easy scaling.
+This project implements an ETL pipeline for MLB data. It pulls MLB stats (batters, pitchers, and game data), processes and structures the data, and runs analytical queries. The pipeline is designed to be efficient, prevent duplicate processing, and allow easy scaling.
 
 The main focus of this project is on ETL (Extract, Transform, Load), database schema design, and query performance. One of the main queries I’ve optimized for is:
 
@@ -114,7 +114,7 @@ python3 query_mlb_data.py
 
 ### **Challenges**
 - **Large JSON files** (~250k lines for a month of data).
-- Right now, I load everything into memory at once using `json.load()`, which is fine for this scale but wouldn’t be efficient file I/O and parsing for much bigger datasets.
+  - Right now, I load everything into memory at once using `json.load()`, which is fine for this scale but wouldn’t be efficient file I/O and parsing for much bigger datasets.
 - **SQLite’s write constraints**: Since SQLite locks the database during writes, concurrent processing is tricky. If this were a high-scale production system, I’d switch to a DB like **PostgreSQL**.
 
 ### **Potential Improvements**
@@ -147,7 +147,7 @@ If I had to integrate AI into this, I’d consider:
 - **Query Validation with AI**
   - Use a model to verify if auto-generated SQL queries are valid based on historical query patterns. Iteratively refine the AI’s translation capability based on user feedback.
 - **Predictive Analytics for MLB stats**
-  - Train a model to predict which players are most likely to hit home runs in the next game.
+  - Train a model to predict which players are most likely to hit home runs in the next game, etc.
 
 ---
 
@@ -166,7 +166,7 @@ This project showcases an end-to-end ETL pipeline for MLB stats with a focus on:
 
 | **Action** | **Command** |
 |------------|-------------|
-| Extract Data | `python3 extract_mlb_data.py 2024-04-01 2024-04-30` |
+| Extract Data | `python3 extract_mlb_data.py <start-date (YYYY-MM-DD)> <end-date (YYYY-MM-DD)>` |
 | Transform & Load Data | `python3 transform_load_mlb_data.py` |
 | Run Queries | `python3 query_mlb_data.py` |
 
